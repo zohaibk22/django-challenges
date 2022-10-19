@@ -2,6 +2,7 @@ from types import NoneType
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import render_to_string
 
 # Create your views here.
 
@@ -49,7 +50,7 @@ def monthly_challenge(request, month):
     # return HttpResponse(view_text)
     try:
         challenge_text = monthly_challenges[month]
-        response_text = f"<h1>{challenge_text}</h1>"
+        response_text = render_to_string('challenges/challenge.html')
     except:
         return HttpResponseNotFound("<h1>This month is not accepted</h1>")
     
