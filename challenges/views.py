@@ -33,7 +33,9 @@ def index(request):
 
     return_val = f"<ul>{list_items}</ul>"
 
-    return HttpResponse(return_val)
+    return render(request,'challenges/index.html', {
+        'challenges': months
+    } )
 
 def monthly_challenge(request, month):
     # view_text = None

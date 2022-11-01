@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Challenges</title>
+    <title>All Challenges</title>
 </head>
 <body>
-    <h1>{{ month_name|title }} Challenge</h1>
-    <!-- <h2>Go for a walk for a walk for at least 20 minutes</h2> -->
-    <h2>
-        {{ text }}
-    </h2>
+    <ul>
+        {% for challenge in challenges %}
+            <li><a href="">{{ challenge|title}}</a></li>
+        {% endfor %}
+
+    </ul>
     
 </body>
 </html>
