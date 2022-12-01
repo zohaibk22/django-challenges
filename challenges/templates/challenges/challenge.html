@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +12,15 @@
 <body>
     <h1>{{ month_name|title }} Challenge</h1>
     <!-- <h2>Go for a walk for a walk for at least 20 minutes</h2> -->
-    <h2>
-        {{ text }}
-    </h2>
+
+    {% if text is not None %}
+        <h2>
+            {{ text }}
+        </h2>
+    {% else %}
+        <p>There is no challenge for this month yet</p>
+ {% endif %}
+    {% comment %} <p>There is no challenge for this month yet</p> {% endcomment %}
     
 </body>
 </html>
